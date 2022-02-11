@@ -108,6 +108,7 @@ y = histograma_stent[0] # Ocorrências
 
 plt.figure(figsize = (30, 30))
 plt.subplot(2, 2, 1)
+plt.tight_layout()
 plt.stem(x[5:255],y[5:255],use_line_collection=(True))
 plt.title('Stent Normalizado')
 plt.ylabel('Número de Ocorrências')
@@ -180,8 +181,9 @@ for i in range(10):
     stent_gamma = skimage.exposure.adjust_gamma(stent_alongado, float(gamma*(i+1)))
     plt.imshow(stent_gamma, cmap = 'gray')
     plt.axis('off')
-plt.show()
 plt.savefig('Variacao_Gamma_1')
+plt.show()
+
 
 gamma = 1
 plt.figure(figsize = (12, 4))
@@ -192,5 +194,5 @@ for i in range(10):
     stent_gamma = skimage.exposure.adjust_gamma(stent_alongado, float(gamma*(i+1)))
     plt.imshow(stent_gamma, cmap = 'gray')
     plt.axis('off')
-plt.show()
 plt.savefig('Variacao_Gamma_10')
+plt.show()
